@@ -11,8 +11,13 @@
   # Packages to install
   home.packages = with pkgs;[
     eza
+    R
+    rPackages.pwr
+    rPackages.tidyverse
+    rPackages.knitr
+    rPackages.binom
+    rPackages.scales
 
- 
   ];
 
   # Git Configuration
