@@ -1,5 +1,22 @@
 { config, pkgs, ... }:
 
+
+
+let
+  # Define R with custom packages
+  R-with-my-packages = pkgs.rWrapper.override {
+    packages = with pkgs.rPackages; [
+      tidyverse
+      pwr
+      knitr
+      binom
+      scales
+      languageserver
+      httpgd
+    ];
+  };
+in
+
 {
   # Basic user details
   home.username = "spent";
@@ -9,15 +26,9 @@
   home.stateVersion = "23.11"; # Do not change unless you understand the implications.
 
   # Packages to install
-  home.packages = with pkgs;[
+  home.packages = with pkgs; [
     eza
-    R
-    rPackages.pwr
-    rPackages.tidyverse
-    rPackages.knitr
-    rPackages.binom
-    rPackages.scales
-
+    R-with-my-packages
   ];
 
   # Git Configuration
