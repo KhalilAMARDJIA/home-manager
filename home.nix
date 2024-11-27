@@ -29,6 +29,7 @@ in
   home.packages = with pkgs; [
     eza
     R-with-my-packages
+    texlive.combined.scheme-medium
   ];
 
   # Git Configuration
