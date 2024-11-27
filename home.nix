@@ -28,9 +28,16 @@ in
   # Packages to install
   home.packages = with pkgs; [
     eza
+    typst
+    quarto
     R-with-my-packages
-    texlive.combined.scheme-medium
+    # usefull fonts
+    lmodern
+
   ];
+
+  # activate fonts
+  fonts.fontconfig.enable = true;
 
   # Git Configuration
   programs.git = {
